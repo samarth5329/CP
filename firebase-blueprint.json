@@ -1,0 +1,208 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated FinSmart user profile, preferences, and learning progress.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Firebase Auth UID of the user." },
+        "displayName": { "type": "string", "description": "User display name." },
+        "financialSafetyScore": { "type": "integer", "description": "Computed safety score 0-100." },
+        "streakDays": { "type": "integer", "description": "Daily learning streak count." },
+        "completedLessonIds": { "type": "array", "description": "Completed lesson IDs." },
+        "completedQuizIds": { "type": "array", "description": "Completed quiz IDs." },
+        "earnedBadgeIds": { "type": "array", "description": "Unlocked badge IDs." },
+        "selectedLanguage": { "type": "string", "enum": ["ENGLISH", "KANNADA", "HINDI"] },
+        "preferredTheme": { "type": "string", "enum": ["LIGHT", "DARK_NEON", "SYSTEM"] },
+        "simpleMode": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp on creation." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp on update." }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "financialSafetyScore",
+        "streakDays",
+        "completedLessonIds",
+        "completedQuizIds",
+        "earnedBadgeIds",
+        "selectedLanguage",
+        "preferredTheme",
+        "simpleMode",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "ExpenseRecord": {
+      "title": "ExpenseRecord",
+      "description": "User-entered household or personal expense entry.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "category": {
+          "type": "string",
+          "enum": ["HOUSEHOLD", "FOOD", "TRANSPORT", "EDUCATION", "HEALTHCARE", "BILLS", "SHOPPING", "OTHER"]
+        },
+        "amount": { "type": "number" },
+        "monthKey": { "type": "string" },
+        "dateMillis": { "type": "integer" },
+        "note": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "category", "amount", "monthKey", "dateMillis", "createdAt", "updatedAt"]
+    },
+    "MonthlyBudget": {
+      "title": "MonthlyBudget",
+      "description": "Monthly income and expense category allocations.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "monthKey": { "type": "string" },
+        "monthlyIncome": { "type": "number" },
+        "householdLimit": { "type": "number" },
+        "foodLimit": { "type": "number" },
+        "transportLimit": { "type": "number" },
+        "educationLimit": { "type": "number" },
+        "healthcareLimit": { "type": "number" },
+        "billsLimit": { "type": "number" },
+        "shoppingLimit": { "type": "number" },
+        "otherLimit": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "userId",
+        "monthKey",
+        "monthlyIncome",
+        "householdLimit",
+        "foodLimit",
+        "transportLimit",
+        "educationLimit",
+        "healthcareLimit",
+        "billsLimit",
+        "shoppingLimit",
+        "otherLimit",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SavingsGoal": {
+      "title": "SavingsGoal",
+      "description": "User savings goal target and progress.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "targetAmount": { "type": "number" },
+        "savedAmount": { "type": "number" },
+        "targetDateMillis": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "category", "targetAmount", "savedAmount", "targetDateMillis", "createdAt", "updatedAt"]
+    },
+    "ScanHistoryItem": {
+      "title": "ScanHistoryItem",
+      "description": "Scam Shield scan result record.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "scanType": { "type": "string", "enum": ["LINK", "MESSAGE", "CALL", "SCREENSHOT"] },
+        "inputPreview": { "type": "string" },
+        "verdict": { "type": "string", "enum": ["GREEN", "YELLOW", "RED", "GREY"] },
+        "summary": { "type": "string" },
+        "reasons": { "type": "array" },
+        "reported": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "scanType", "inputPreview", "verdict", "summary", "reasons", "reported", "createdAt", "updatedAt"]
+    },
+    "TrustedContact": {
+      "title": "TrustedContact",
+      "description": "Trusted family member or helper with explicit user consent.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "relationship": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "consentGranted": { "type": "boolean" },
+        "revoked": { "type": "boolean" },
+        "sharedAlertsCount": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "name", "relationship", "phoneNumber", "consentGranted", "revoked", "sharedAlertsCount", "createdAt", "updatedAt"]
+    },
+    "IncidentReport": {
+      "title": "IncidentReport",
+      "description": "User-prepared fraud emergency incident details.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "incidentDate": { "type": "string" },
+        "approximateTime": { "type": "string" },
+        "amount": { "type": "number" },
+        "referenceId": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "description": { "type": "string" },
+        "evidenceSummary": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "incidentDate", "approximateTime", "amount", "referenceId", "paymentMethod", "description", "createdAt", "updatedAt"]
+    },
+    "QuizResultRecord": {
+      "title": "QuizResultRecord",
+      "description": "Completed quiz score record.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "quizId": { "type": "string" },
+        "quizTitle": { "type": "string" },
+        "score": { "type": "integer" },
+        "totalQuestions": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "quizId", "quizTitle", "score", "totalQuestions", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile and learning progress document scoped to authenticated UID."
+    },
+    "/users/{userId}/expenses/{expenseId}": {
+      "schema": { "$ref": "#/entities/ExpenseRecord" },
+      "description": "User expense entries."
+    },
+    "/users/{userId}/budgets/{monthKey}": {
+      "schema": { "$ref": "#/entities/MonthlyBudget" },
+      "description": "Monthly income and budget limits per YYYY-MM."
+    },
+    "/users/{userId}/goals/{goalId}": {
+      "schema": { "$ref": "#/entities/SavingsGoal" },
+      "description": "User savings goals."
+    },
+    "/users/{userId}/scanHistory/{scanId}": {
+      "schema": { "$ref": "#/entities/ScanHistoryItem" },
+      "description": "Scam Shield recent check history."
+    },
+    "/users/{userId}/trustedContacts/{contactId}": {
+      "schema": { "$ref": "#/entities/TrustedContact" },
+      "description": "User-designated trusted family contacts."
+    },
+    "/users/{userId}/incidentReports/{reportId}": {
+      "schema": { "$ref": "#/entities/IncidentReport" },
+      "description": "User-prepared SOS 1930 incident reports."
+    },
+    "/users/{userId}/quizResults/{resultId}": {
+      "schema": { "$ref": "#/entities/QuizResultRecord" },
+      "description": "User quiz score history."
+    }
+  }
+}

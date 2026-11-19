@@ -1,0 +1,6 @@
+{
+  "name": "FinSmart",
+  "description": "Financial literacy, scam protection, money management, and AI safety companion for Android.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

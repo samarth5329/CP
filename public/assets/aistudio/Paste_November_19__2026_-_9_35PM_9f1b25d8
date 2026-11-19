@@ -1,0 +1,1303 @@
+FINSMART – COMPLETE ANDROID APPLICATION REDESIGN, SECURITY ENHANCEMENT & FEATURE IMPLEMENTATION
+
+ROLE AND EXPECTATIONS
+
+Act as a Senior Android Developer, Senior UI/UX Designer, Application Security Engineer, Product Architect and Financial Technology Developer.
+
+Your task is to transform my existing Android application, FinSmart, into a polished, modern, intelligent, secure and accessible financial literacy and financial safety application.
+
+This is not a request to create a new application from scratch.
+
+You must work with the existing FinSmart Android project, understand its architecture, preserve its existing functionality and improve it substantially.
+
+Think from two perspectives:
+
+1. A financially inexperienced person who does not understand banking, online payments, financial planning or digital scams.
+2. A senior software developer who must convert those real-world problems into practical, secure and reliable application features.
+
+The application should be especially useful for Indian households, rural communities, elderly people, students and first-time digital banking users.
+
+---
+
+PART 1 – UNDERSTAND MY REFERENCE IMAGES
+
+I am providing 10 reference screenshots.
+
+IMPORTANT: There are two different categories of reference images.
+
+CATEGORY A: EXISTING FINSMART FUNCTIONALITY
+
+The first eight screenshots represent the existing FinSmart application.
+
+They show the existing:
+
+- Home dashboard.
+- Learning modules.
+- Learning progress.
+- Basic Banking.
+- Savings and Planning.
+- Digital Payments and UPI.
+- Fraud and Scam Safety.
+- FinSmart AI Sahayak.
+- Interactive Tools and Awareness.
+- Fraud Simulator.
+- Savings and Budget.
+- Awareness Videos.
+- Government Schemes.
+- Knowledge Quiz.
+- Daily Challenges.
+- Certificates and achievements.
+- Emergency SOS 1930.
+- Steps to follow after financial fraud.
+- Existing navigation and settings.
+
+These screenshots are the reference for the existing application's features and functionality.
+
+STRICT REQUIREMENT:
+
+Preserve all existing useful features.
+
+Do not remove existing screens, lessons, quizzes, tools, functionality, navigation options, content or user progress simply because you are redesigning the application.
+
+You may reorganize the layout, improve the presentation, combine genuinely redundant elements or remove unused code, but never remove a working feature without identifying it and explaining why it is redundant or unnecessary.
+
+CATEGORY B: NEW VISUAL DESIGN REFERENCES
+
+The last two screenshots are design references.
+
+- First collage: Light theme.
+- Second collage: Dark neon theme.
+
+These images define the new visual direction.
+
+Use their visual language, colour combinations, card designs, typography, gradients, icons, navigation, spacing and overall presentation.
+
+Do not copy their sample financial data or pretend that their example features are already implemented.
+
+Create a unified FinSmart design system based on these references.
+
+The result should look like a professionally designed commercial Android application, not a basic college project.
+
+---
+
+PART 2 – FIRST PHASE: PROJECT INSPECTION
+
+Before changing anything, thoroughly inspect the existing project.
+
+1. Identify the programming language and Android framework.
+2. Identify whether the application uses Kotlin, Java, XML layouts, Jetpack Compose or a combination.
+3. Inspect the existing folder structure.
+4. Identify the application's architecture.
+5. Inspect Activities, Fragments, ViewModels, repositories and navigation.
+6. Inspect Firebase configuration and existing integrations.
+7. Inspect authentication and database implementation.
+8. Identify all existing screens and their associated functionality.
+9. Identify all existing APIs and external dependencies.
+10. Identify existing AI integration and backend configuration.
+11. Inspect the current Gradle configuration.
+12. Identify permissions and AndroidManifest configuration.
+13. Check existing application assets, images, fonts and icons.
+14. Identify any crashes, duplicated code, unfinished screens and non-functional buttons.
+15. Identify any existing security weaknesses.
+
+Create an internal feature inventory before modifying the project.
+
+If the project contains source code, work directly with that source code.
+
+If only an APK or decompiled DEX files are available, do not pretend that you have the original Kotlin or Java source. Request the editable Android Studio project before attempting source-level modifications.
+
+Do not overwrite the existing project.
+
+Create a separate development branch or safe checkpoint before making substantial changes.
+
+---
+
+PART 3 – USER PERSPECTIVE: REAL-WORLD PROBLEMS
+
+Imagine you are a person who:
+
+- Does not understand banking terminology.
+- Has recently started using UPI.
+- Cannot distinguish legitimate messages from fake messages.
+- Does not know how to verify a website.
+- Can accidentally click suspicious links.
+- Does not understand OTP, PIN, CVV or banking credentials.
+- Can be manipulated by fake customer-care agents.
+- Does not know how to manage monthly income.
+- Does not know how much money to save.
+- Cannot understand complicated financial applications.
+- May not be comfortable using English.
+- May not know what to do after being financially scammed.
+
+FinSmart should help this person become financially independent and digitally safe.
+
+The application should not merely teach people about financial safety. It should actively help them make safer decisions.
+
+Implement the following features.
+
+---
+
+PART 4 – NEW FEATURE: FINSMART SCAM SHIELD
+
+This should become one of the most important features of FinSmart.
+
+Create a dedicated Scam Shield section.
+
+Purpose: Allow users to check suspicious links, messages and potential scams before taking action.
+
+4.1 Link Checker
+
+Allow users to paste a suspicious URL.
+
+The application should analyse:
+
+- Domain reputation.
+- Suspicious URL patterns.
+- Misspelled brand names.
+- Lookalike domains.
+- URL shorteners.
+- Suspicious redirects.
+- Unusual domain extensions.
+- Known phishing domains.
+- HTTPS and certificate information where available.
+- Suspicious login and credential collection patterns.
+
+Display understandable results:
+
+GREEN: No known threat detected.
+
+YELLOW: Suspicious. Further verification recommended.
+
+RED: Known malicious or high-risk indicators detected.
+
+GREY: Unable to verify.
+
+Never claim that a link is 100% safe.
+
+An unknown URL must never automatically receive a safe classification.
+
+Provide a simple explanation of why the link received its classification.
+
+Example:
+
+"This website looks similar to your bank's official website, but its domain is different. Do not enter your banking details."
+
+Provide:
+
+- Domain information.
+- Risk indicators.
+- Reasons for the result.
+- Recommended next action.
+- Option to copy the analysis.
+- Recent scan history.
+- Option to report a suspicious website.
+
+IMPORTANT SECURITY REQUIREMENTS:
+
+- Do not automatically open suspicious URLs.
+- Do not execute JavaScript from scanned websites.
+- Do not download files during scanning.
+- Never request banking passwords, OTPs or UPI PINs.
+- Do not transmit unnecessary personal information to external scanning services.
+- Use a secure backend for third-party threat-intelligence integrations.
+- Protect API keys using backend configuration.
+- Implement request timeouts, validation and rate limiting.
+
+Do not create a fake scanning animation that produces random results.
+
+The results must be based on actual checks.
+
+If external threat-intelligence APIs are unavailable, implement a transparent local heuristic scanner and clearly identify its limitations.
+
+4.2 Message and SMS Scam Checker
+
+Allow users to paste suspicious messages.
+
+Examples:
+
+- Your bank account will be blocked today.
+- Your KYC has expired.
+- Claim your free government reward.
+- Your electricity connection will be disconnected.
+- You have won a lottery.
+- Click here to receive your refund.
+- Your UPI account requires immediate verification.
+
+Analyse:
+
+- Urgency and threatening language.
+- Fake rewards.
+- Suspicious URLs.
+- Requests for OTPs.
+- Requests for UPI PINs.
+- Requests for passwords.
+- Fake customer-care numbers.
+- Impersonation of banks and government authorities.
+- Requests to install unknown applications.
+- Remote-access application scams.
+
+Display:
+
+1. Scam probability or risk classification.
+2. Detected suspicious phrases.
+3. Explanation in simple language.
+4. Recommended action.
+5. What the user should avoid doing.
+
+Do not describe an AI-generated probability as a statistically calibrated fraud probability.
+
+4.3 Screenshot Scam Analysis
+
+Allow users to upload or select screenshots of suspicious messages and payment requests.
+
+Use OCR to extract readable text.
+
+Analyse the extracted text using the same scam detection rules.
+
+Show the extracted text and allow users to correct OCR mistakes before analysis.
+
+Do not upload screenshots to third parties unnecessarily.
+
+Warn users before uploading sensitive screenshots containing account numbers, phone numbers or other personal information.
+
+4.4 Fake Customer-Care Number Awareness
+
+Create a feature that teaches users to identify fake customer-care numbers.
+
+Explain:
+
+- Why random numbers found through search results may be fraudulent.
+- Why users should verify contact information through official bank websites and applications.
+- Why screen-sharing applications can be dangerous.
+- Why legitimate support should never require a UPI PIN or OTP.
+
+Do not present an unverified number as an official bank contact.
+
+---
+
+PART 5 – NEW FEATURE: BEFORE YOU PAY
+
+Create a dedicated interactive safety assistant.
+
+Whenever users are about to:
+
+- Send money through UPI.
+- Scan a QR code.
+- Pay an online seller.
+- Accept a collect request.
+- Transfer money to an unknown person.
+
+Show an appropriate safety checklist.
+
+UPI safety checklist
+
+1. Verify the recipient's name.
+2. Confirm the exact amount.
+3. Understand why the payment is being requested.
+4. Never enter your UPI PIN to receive money.
+5. Do not approve unknown collect requests.
+6. Do not scan QR codes merely to receive money.
+7. Avoid suspicious payment links.
+8. Verify unfamiliar sellers before paying.
+
+Create different checklists for different payment situations.
+
+For example, paying a shop, sending money to a friend and accepting a payment request should not all display identical warnings.
+
+Use simple language and visual indicators.
+
+The user should be able to understand the checklist in a few seconds.
+
+---
+
+PART 6 – NEW FEATURE: MONEY MANAGER
+
+Improve the existing Savings and Budget functionality into a proper money-management section.
+
+6.1 Monthly Budget
+
+Allow users to enter:
+
+- Monthly income.
+- Household expenses.
+- Food expenses.
+- Transport expenses.
+- Education expenses.
+- Healthcare expenses.
+- Electricity and bills.
+- Shopping.
+- Other expenses.
+
+Automatically calculate:
+
+Total Income = Sum of all income sources.
+
+Total Expenses = Sum of all expenses.
+
+Remaining Money = Total Income - Total Expenses.
+
+Savings Percentage = (Remaining Money / Total Income) × 100.
+
+Handle zero or invalid income safely.
+
+6.2 Expense Tracking
+
+Allow users to:
+
+- Add expenses.
+- Edit expenses.
+- Delete expenses.
+- Categorise transactions.
+- Select dates.
+- Add descriptions.
+- View monthly reports.
+- View yearly reports.
+- Compare expenses between months.
+
+Create visual charts.
+
+Use donut charts, bar charts and trend graphs where appropriate.
+
+6.3 Savings Goals
+
+Allow users to create goals.
+
+Examples:
+
+- Emergency fund.
+- Education.
+- Medical expenses.
+- Household purchases.
+- Future investments.
+
+Allow users to enter a target amount and target date.
+
+Display:
+
+- Target amount.
+- Amount saved.
+- Remaining amount.
+- Completion percentage.
+- Suggested monthly saving.
+
+Do not automatically move or invest the user's money.
+
+6.4 Needs vs Wants
+
+Create an educational interactive tool.
+
+Explain the difference between:
+
+NEEDS:
+Food, housing, education, medicines and essential bills.
+
+WANTS:
+Entertainment, luxury purchases, unnecessary subscriptions and impulsive shopping.
+
+Allow users to categorise example purchases.
+
+Provide friendly financial insights without judging the user.
+
+6.5 Financial Insights
+
+Generate understandable insights such as:
+
+"You spent ₹1,200 more on shopping this month compared with last month."
+
+"Your current savings represent 18% of your monthly income."
+
+"You could reach your savings goal by saving approximately ₹500 every month."
+
+These insights must be based on actual user-entered data.
+
+Never invent income, expenses or transactions.
+
+Clearly explain that the application is an educational money-management tool, not a bank account or investment platform.
+
+---
+
+PART 7 – NEW FEATURE: TRUSTED CONTACT AND FAMILY SAFETY
+
+Allow users to optionally designate a trusted family member or trusted contact.
+
+Potential use cases:
+
+- Elderly people receiving suspicious payment requests.
+- First-time UPI users.
+- People who need help understanding suspicious messages.
+- Users who want a second opinion before paying an unknown person.
+
+Allow the user to voluntarily share a suspicious message or scam analysis with their trusted contact.
+
+Requirements:
+
+- Obtain explicit consent.
+- Allow users to revoke access.
+- Never share financial data automatically.
+- Never expose banking credentials.
+- Do not allow trusted contacts to control the user's bank account.
+- Protect shared information.
+- Clearly explain what information is being shared.
+
+---
+
+PART 8 – IMPROVE FINSMART AI SAHAYAK
+
+Keep the existing FinSmart AI Sahayak.
+
+Improve its intelligence, usability and reliability.
+
+It should act as a simple financial literacy assistant.
+
+It should understand questions such as:
+
+- What is a savings account?
+- How does UPI work?
+- What is an IFSC code?
+- How do I identify a fake banking message?
+- What is the difference between debit and credit cards?
+- How much should I save every month?
+- What should I do if I accidentally share my OTP?
+- Is this payment request suspicious?
+- What is PMJDY?
+- How do I use an ATM?
+
+AI behaviour
+
+The assistant must:
+
+1. Use simple and understandable language.
+2. Avoid unnecessary banking terminology.
+3. Explain unfamiliar terms.
+4. Give step-by-step instructions.
+5. Support English, Kannada and Hindi.
+6. Provide short answers by default.
+7. Provide detailed explanations when requested.
+8. Identify potentially dangerous financial actions.
+9. Never ask for UPI PINs, OTPs, CVVs or passwords.
+10. Never claim to be a bank representative.
+11. Never pretend to verify something it has not actually checked.
+
+Multilingual voice support
+
+Implement:
+
+- Text-to-speech.
+- Speech-to-text where supported.
+- Language selection.
+- Voice playback controls.
+- Read-aloud functionality for lessons.
+
+Use appropriate Android speech services.
+
+Provide a fallback when voice services are unavailable.
+
+---
+
+PART 9 – FRAUD EMERGENCY AND RECOVERY SYSTEM
+
+Preserve the existing SOS 1930 section.
+
+Improve it into a proper financial fraud emergency centre.
+
+Emergency screen
+
+Display:
+
+NATIONAL CYBER CRIME HELPLINE: 1930
+
+Official reporting portal:
+https://cybercrime.gov.in/
+
+Provide prominent actions:
+
+- Call 1930.
+- Open the official cybercrime reporting portal.
+- Contact the bank through verified official channels.
+- View immediate recovery instructions.
+- Prepare an incident report.
+
+After financial fraud
+
+Provide an ordered recovery guide:
+
+1. Stop communicating with the suspected scammer.
+2. Immediately contact 1930.
+3. Contact the bank through its official contact channel.
+4. Ask the bank to take appropriate action on the affected account, UPI or card.
+5. Report the incident through the official cybercrime portal.
+6. Preserve transaction IDs, screenshots, messages and other evidence.
+7. Secure affected accounts and change compromised credentials.
+8. Never pay additional money to someone promising to recover stolen money.
+
+Do not promise that stolen money will definitely be recovered.
+
+Incident Report Preparation
+
+Allow users to prepare an incident report containing:
+
+- Incident date.
+- Approximate time.
+- Transaction amount.
+- Transaction reference ID.
+- Payment method.
+- Description.
+- Supporting evidence.
+
+Allow users to export or copy the report.
+
+Do not require users to enter passwords, PINs or OTPs.
+
+Store sensitive evidence securely and only with user consent.
+
+---
+
+PART 10 – OFFLINE ACCESSIBILITY
+
+FinSmart is intended to be useful even for people with limited internet access.
+
+Implement offline support wherever possible.
+
+Allow users to access:
+
+- Previously downloaded lessons.
+- Basic banking guides.
+- UPI safety instructions.
+- Fraud awareness information.
+- Emergency instructions.
+- Previously completed quizzes.
+- Saved educational content.
+
+Display a clear offline indicator.
+
+Do not show a false online status when the device is disconnected.
+
+Synchronise user progress when connectivity returns.
+
+Use safe conflict resolution to prevent user progress from being overwritten.
+
+---
+
+PART 11 – GAMIFICATION AND LEARNING
+
+Preserve existing learning modules, quizzes, challenges, badges and certificates.
+
+Improve the learning experience with:
+
+- Learning streaks.
+- Daily financial safety challenges.
+- Achievement badges.
+- Lesson completion progress.
+- Quiz score history.
+- Recommended lessons.
+- Learning paths.
+- Certificates.
+
+Add realistic scenario-based learning.
+
+Examples:
+
+Scenario 1:
+Someone calls claiming to be from your bank and asks for your OTP.
+
+Scenario 2:
+A stranger asks you to scan a QR code to receive money.
+
+Scenario 3:
+A message says your KYC will expire within one hour.
+
+Scenario 4:
+An unknown person sends a payment collect request.
+
+Ask the user what they would do.
+
+Explain the correct answer.
+
+Make the application educational rather than overly competitive.
+
+---
+
+PART 12 – GOVERNMENT SCHEMES
+
+Preserve the existing Government Schemes section.
+
+Improve the presentation of:
+
+- PM Jan Dhan Yojana.
+- Atal Pension Yojana.
+- Pradhan Mantri Suraksha Bima Yojana.
+- Pradhan Mantri Jeevan Jyoti Bima Yojana.
+
+Display:
+
+- Scheme purpose.
+- Eligibility.
+- Benefits.
+- Application process.
+- Required documents.
+- Official application links.
+- Important warnings about fraudulent agents.
+
+IMPORTANT:
+
+Government scheme details can change.
+
+Use verified official government sources and display the last verification date.
+
+Never invent eligibility conditions or benefits.
+
+Never claim that a user is eligible without checking the relevant criteria.
+
+---
+
+PART 13 – COMPLETE UI/UX REDESIGN
+
+This is one of the highest-priority requirements.
+
+I want a completely redesigned, visually impressive and professional Android application.
+
+Use the last two reference images as the visual direction.
+
+The application must support BOTH:
+
+1. Light Theme.
+2. Dark Neon Theme.
+
+Also support System Default if practical.
+
+Users must be able to change the theme in Settings.
+
+Save their preference so the theme remains selected after restarting the application.
+
+Every screen must follow the selected theme.
+
+Do not create a dark theme for only the dashboard while leaving other screens unchanged.
+
+13.1 LIGHT THEME
+
+Design language:
+
+Modern, clean, colourful, premium fintech application.
+
+Suggested colours:
+
+- Background: #F5F9FF
+- Surface: #FFFFFF
+- Primary: #087F5B
+- Mint: #C8F7E8
+- Cyan: #D8F3FF
+- Lavender: #EEE5FF
+- Soft blue: #DDEEFF
+- Text primary: #142B32
+- Text secondary: #60737B
+- Warning: #F59E0B
+- Danger: #DC3545
+- Success: #16A36A
+
+Use colourful feature cards.
+
+Each feature should have its own identity.
+
+Examples:
+
+Banking: Emerald green.
+
+Savings: Teal.
+
+UPI: Cyan and blue.
+
+Fraud protection: Coral and red.
+
+AI Assistant: Violet.
+
+Financial analytics: Blue and purple.
+
+Use subtle gradients, clean shadows and rounded surfaces.
+
+The light theme should feel bright, friendly and premium.
+
+Avoid making every card identical white.
+
+Use different pastel backgrounds to visually distinguish important sections.
+
+13.2 DARK NEON THEME
+
+Design language:
+
+Futuristic, sophisticated, premium cybersecurity and fintech interface.
+
+Suggested palette:
+
+- Background: #070B18
+- Secondary background: #0D1428
+- Card surface: #121D35
+- Elevated surface: #192744
+- Neon green: #39FF88
+- Cyan: #00E5FF
+- Purple: #A855F7
+- Blue: #3987FF
+- Pink: #FF4FD8
+- Red: #FF4567
+- Primary text: #F4F7FF
+- Secondary text: #A8B4CC
+
+Use:
+
+- Neon accent borders.
+- Subtle glow effects.
+- Gradient buttons.
+- Coloured progress indicators.
+- Beautiful charts.
+- Dark glass-like surfaces.
+- Animated transitions.
+- Premium icons.
+- Smooth card interactions.
+
+Use glow effects carefully.
+
+Do not make every component excessively bright.
+
+The interface must remain readable and comfortable during long usage.
+
+Use red neon primarily for danger and fraud warnings.
+
+Use green for positive and successful states.
+
+Use cyan for informational and interactive elements.
+
+Use purple for AI and intelligent features.
+
+13.3 CENTRAL DESIGN SYSTEM
+
+Create a reusable design system.
+
+Centralise:
+
+- Colours.
+- Typography.
+- Spacing.
+- Corner radii.
+- Elevation.
+- Shadows.
+- Gradients.
+- Icon sizes.
+- Button styles.
+- Input styles.
+- Card styles.
+- Navigation styles.
+
+Use appropriate Android theme resources or Compose Material theming based on the existing project architecture.
+
+Do not hardcode different colours separately in every screen.
+
+Use semantic colour tokens so all screens update when the theme changes.
+
+Maintain consistent spacing and typography.
+
+13.4 TYPOGRAPHY AND ACCESSIBILITY
+
+Use a modern readable font.
+
+Prefer a consistent typography hierarchy.
+
+Support:
+
+- Larger text.
+- Readable labels.
+- High contrast.
+- Accessible touch targets.
+- Screen readers.
+- Clear icon descriptions.
+- Simple navigation.
+- Kannada and Hindi text rendering.
+
+Avoid tiny text.
+
+The application should remain usable for elderly people and users with limited technical knowledge.
+
+---
+
+PART 14 – REDESIGN EACH SCREEN
+
+HOME DASHBOARD
+
+Create a modern dashboard with:
+
+- FinSmart branding.
+- User greeting.
+- Online/offline indicator.
+- Notification access.
+- Profile access.
+- Financial Safety Score.
+- Learning progress.
+- Quick actions.
+- Money Manager summary.
+- Recent learning activity.
+- Daily financial safety tip.
+- Recommended learning modules.
+
+Quick actions should include:
+
+1. Check Suspicious Link.
+2. Before You Pay.
+3. Ask AI Sahayak.
+4. Add Expense.
+5. Savings Goals.
+6. Report Fraud.
+
+The dashboard should not become overcrowded.
+
+Use responsive cards and prioritise the most important actions.
+
+LEARN SCREEN
+
+Preserve the four existing learning modules:
+
+1. Basic Banking.
+2. Savings and Planning.
+3. Digital Payments (UPI).
+4. Fraud and Scam Safety.
+
+Show progress, completion and recommended lessons.
+
+Use colourful module cards with unique icons.
+
+Allow users to filter by module.
+
+Preserve the existing quizzes and lesson content.
+
+AI SAHAYAK SCREEN
+
+Create a premium AI chat interface.
+
+Include:
+
+- Language selection.
+- Suggested questions.
+- Chat history.
+- Voice playback.
+- Clear message bubbles.
+- Typing indicator.
+- Input field.
+- Send button.
+- Safety pledge.
+
+Make the AI interface look modern in both themes.
+
+TOOLS SCREEN
+
+Provide organised access to:
+
+- Scam Shield.
+- Link Checker.
+- Message Checker.
+- Screenshot Analysis.
+- Fraud Simulator.
+- Money Manager.
+- Budget Planner.
+- Savings Goals.
+- Calculators.
+- Awareness Videos.
+- Government Schemes.
+- Knowledge Quiz.
+- Daily Challenges.
+- Certificates.
+
+Use visually distinct feature cards.
+
+SOS SCREEN
+
+Create a clear emergency interface.
+
+The 1930 call action should be prominent.
+
+Use a strong danger colour.
+
+Display emergency instructions in numbered steps.
+
+Provide easy access to the official reporting portal.
+
+Never hide the emergency action inside a settings menu.
+
+SETTINGS SCREEN
+
+Provide:
+
+- Appearance: Light / Dark / System.
+- Language.
+- Simple Mode.
+- Text Size.
+- Voice and Accessibility.
+- Notifications.
+- Privacy and Security.
+- Trusted Contacts.
+- Offline Downloads.
+- About FinSmart.
+- Version Information.
+- Logout.
+
+---
+
+PART 15 – SIMPLE MODE FOR BEGINNERS
+
+Create an optional Simple Mode.
+
+This is particularly important for users who are not familiar with technology.
+
+When enabled:
+
+- Increase button sizes.
+- Use simpler words.
+- Reduce unnecessary visual clutter.
+- Show fewer options at a time.
+- Provide more explanations.
+- Make emergency actions obvious.
+- Provide voice instructions.
+- Use step-by-step navigation.
+
+Do not remove functionality.
+
+Simple Mode should simplify access to features, not disable them.
+
+---
+
+PART 16 – SECURITY AND PRIVACY
+
+Treat security as a core requirement.
+
+Implement:
+
+1. Secure authentication.
+2. Proper session handling.
+3. Secure API communication.
+4. Input validation.
+5. Error handling.
+6. Rate limiting on backend endpoints.
+7. Secure storage for sensitive tokens.
+8. Appropriate Android permissions.
+9. Protection against accidental sensitive-data logging.
+10. Secure handling of uploaded screenshots.
+11. Privacy-conscious analytics.
+12. Proper logout and session invalidation.
+
+Never store passwords, OTPs, UPI PINs or CVVs.
+
+Do not ask users to provide bank account credentials.
+
+Do not implement functionality that accesses bank accounts without proper official integrations and user consent.
+
+Do not create fake bank balances or transactions.
+
+If an integration is not configured, clearly display that the feature is unavailable rather than simulating a successful real-world operation.
+
+Use AI for explanations and assistance, but use deterministic security checks for critical safety decisions.
+
+AI must not be the only protection against financial scams.
+
+---
+
+PART 17 – PERFORMANCE AND ANDROID QUALITY
+
+Ensure the application performs well on ordinary Android devices.
+
+Requirements:
+
+- Smooth scrolling.
+- Efficient image loading.
+- Proper lifecycle management.
+- Avoid unnecessary background operations.
+- Avoid memory leaks.
+- Avoid excessive recomposition if using Compose.
+- Optimise database queries.
+- Use pagination where appropriate.
+- Handle network failures gracefully.
+- Support different screen sizes.
+- Support different Android versions according to the existing project's minimum SDK.
+- Avoid blocking the main thread.
+- Provide proper loading, empty and error states.
+
+Animations must not make the application slow.
+
+---
+
+PART 18 – FUNCTIONALITY REQUIREMENTS
+
+IMPORTANT: Do not build static mockups.
+
+Every visible interactive element must work.
+
+Examples:
+
+- Buttons must perform their intended action.
+- Cards must open the correct screens.
+- Theme selection must update the entire application.
+- Language selection must update supported content.
+- Search must actually search.
+- Forms must validate input.
+- Calculators must calculate correctly.
+- Expense tracking must save data.
+- Quizzes must calculate scores.
+- Learning progress must persist.
+- Scam analysis must return actual results.
+- Emergency call buttons must open the correct phone action.
+- External links must use verified official destinations.
+
+No dead buttons.
+
+No placeholder functionality presented as complete.
+
+If a backend API or external integration is unavailable, clearly document it and implement a safe, honest fallback.
+
+---
+
+PART 19 – CODE QUALITY AND CLEANUP
+
+Review the entire existing codebase.
+
+Identify:
+
+- Unused functions.
+- Duplicate implementations.
+- Dead code.
+- Unnecessary dependencies.
+- Redundant UI components.
+- Unused resources.
+- Duplicate navigation destinations.
+- Unused layouts.
+- Outdated code.
+- Inconsistent naming.
+- Unnecessary hardcoded values.
+- Unused imports.
+- Unused permissions.
+
+You are allowed to remove genuinely unused code.
+
+However:
+
+DO NOT remove any working user-facing feature merely to simplify the codebase.
+
+Before deleting any existing component, verify that it is not referenced elsewhere.
+
+Preserve important Firebase functionality, existing data structures, authentication and backend integrations unless a specific migration is necessary.
+
+If a migration is required, implement it safely and maintain backward compatibility wherever possible.
+
+---
+
+PART 20 – IMPLEMENTATION ORDER
+
+Do not attempt to change everything blindly in one step.
+
+Follow this development sequence.
+
+PHASE 0 – AUDIT
+
+- Inspect project.
+- Identify architecture.
+- Inventory features.
+- Identify risks.
+- Check build configuration.
+- Create safe development branch.
+
+PHASE 1 – DESIGN FOUNDATION
+
+- Create central theme system.
+- Implement light theme.
+- Implement dark neon theme.
+- Add system theme support.
+- Implement theme persistence.
+- Create reusable components.
+- Establish typography and spacing.
+
+PHASE 2 – EXISTING SCREEN REDESIGN
+
+Redesign all existing screens without removing their functionality.
+
+- Home.
+- Learn.
+- AI Sahayak.
+- Tools.
+- SOS.
+- Settings.
+
+Verify navigation after each screen.
+
+PHASE 3 – SCAM SHIELD
+
+Implement:
+
+- Link checking.
+- Message checking.
+- Screenshot analysis.
+- Risk explanations.
+- Scan history.
+- Secure backend integration where configured.
+
+PHASE 4 – FINANCIAL MANAGEMENT
+
+Implement:
+
+- Expense tracking.
+- Budgeting.
+- Savings goals.
+- Financial reports.
+- Needs vs Wants.
+- Financial insights.
+
+PHASE 5 – SAFETY AND ASSISTANCE
+
+Implement:
+
+- Before You Pay.
+- Trusted Contacts.
+- Fake customer-care awareness.
+- Fraud recovery.
+- Incident report preparation.
+
+PHASE 6 – ACCESSIBILITY AND LEARNING
+
+Implement:
+
+- Multilingual support.
+- Voice support.
+- Simple Mode.
+- Offline learning.
+- Scenario-based learning.
+
+PHASE 7 – TESTING AND OPTIMISATION
+
+Test every screen and feature.
+
+Resolve all compilation errors.
+
+Resolve crashes.
+
+Verify database operations.
+
+Verify theme switching.
+
+Verify navigation.
+
+Verify input validation.
+
+Verify security behaviour.
+
+Verify offline behaviour.
+
+Verify application performance.
+
+---
+
+PART 21 – TESTING CHECKLIST
+
+Before considering the work complete, verify:
+
+[ ] Existing features are preserved.
+
+[ ] No existing user progress is lost.
+
+[ ] Light theme works across every screen.
+
+[ ] Dark neon theme works across every screen.
+
+[ ] System theme works.
+
+[ ] Theme preference persists after restarting.
+
+[ ] Navigation works.
+
+[ ] All buttons work.
+
+[ ] Forms validate input.
+
+[ ] Expense calculations are correct.
+
+[ ] Savings calculations are correct.
+
+[ ] Learning progress is saved.
+
+[ ] Quizzes calculate scores correctly.
+
+[ ] Scam Shield does not falsely guarantee safety.
+
+[ ] Unknown URLs are handled cautiously.
+
+[ ] Suspicious messages are analysed correctly.
+
+[ ] AI never requests sensitive banking credentials.
+
+[ ] SOS 1930 action works.
+
+[ ] Official cybercrime portal opens correctly.
+
+[ ] Language switching works for supported content.
+
+[ ] Offline content works.
+
+[ ] No unnecessary permissions are requested.
+
+[ ] No sensitive information is exposed in logs.
+
+[ ] No major UI overflow occurs on smaller devices.
+
+[ ] No crashes occur during normal navigation.
+
+[ ] Release build completes successfully.
+
+---
+
+PART 22 – FINAL DELIVERY
+
+After implementation:
+
+1. Provide a summary of the original architecture.
+2. Provide the list of preserved features.
+3. Provide the list of newly implemented features.
+4. Explain the security improvements.
+5. Explain the UI redesign.
+6. Explain any limitations or integrations requiring API credentials.
+7. List files created, modified and removed.
+8. Provide build and testing results.
+9. Identify any remaining incomplete functionality.
+10. Generate a working Android APK if the build environment supports it.
+11. Preserve the editable Android Studio source project.
+12. Do not claim that an untested feature is fully functional.
+
+If compilation fails, investigate and fix the underlying problem rather than hiding or ignoring it.
+
+---
+
+FINAL PRODUCT VISION
+
+FinSmart should become more than a financial literacy application.
+
+It should become a personal financial safety companion for ordinary people.
+
+A user should be able to:
+
+- Learn how banking works.
+- Understand digital payments.
+- Recognise suspicious messages.
+- Check potentially dangerous links.
+- Avoid fraudulent payment requests.
+- Manage household expenses.
+- Plan savings.
+- Understand government schemes.
+- Ask financial questions in their preferred language.
+- Get guidance during a financial fraud emergency.
+
+The application must combine:
+
+Financial Literacy + Scam Protection + Money Management + AI Assistance + Accessibility.
+
+Most importantly, it must be visually impressive, technically reliable, secure and extremely easy to use.
+
+Think like a senior developer building a real product for real people.
+
+Do not sacrifice functionality for appearance.
+
+Do not sacrifice security for convenience.
+
+Do not sacrifice usability for animations.
+
+Build a complete, consistent and production-minded FinSmart Android application.
